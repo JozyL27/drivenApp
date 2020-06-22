@@ -16,7 +16,10 @@ export default class Checkerboard extends Component {
         }
 
         return arr.map(el => el === '#' ? 
-        <div className='hash'>#</div>: <div className='space'>_</div>)
+        <div className='hash' 
+        style={{ backgroundColor: 'black', padding: '10px' }}>#</div>: 
+        <div className='space' 
+        style={{ backgroundColor: 'grey', padding: '10px' }}>_</div>)
     }
 
     handleValueChange = (e) => {
@@ -37,15 +40,6 @@ export default class Checkerboard extends Component {
             margin: 50px auto 20px auto;
             border: 1px solid black;
             display: flex;
-        }
-
-        .space {
-            background-color: black;
-            border: 1px solid black;
-        }
-        .hash {
-            background-color: white;
-            border: 1px solid black;
         }
       `}</style>
             </>
