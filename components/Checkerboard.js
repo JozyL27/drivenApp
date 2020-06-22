@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Checkerboard extends Component {
     state = { value: 8 }
 
-    createBoard = () => {
+    createBoard = (value) => {
         let arr = []
 
         for(let i = 0; i < this.state.value; i++) {
@@ -19,14 +19,18 @@ export default class Checkerboard extends Component {
         <div className='hash'>#</div>: <div className='space'>_</div>)
     }
 
+    handleValueChange = (e) => {
+        this.setState({ value: e.target.value })
+    }
+
 
     render() {
         return (
             <>
-            <div className='boardContainer'>{this.createBoard()}</div>
+            <div className='boardContainer'>{this.createBoard(this.state.value)}</div>
             <form>
                 <label htmlFor='checkerVal'>input checkerboard val</label>
-                <input id='checkerVal'></input>
+                <input id='checkerVal' value={this.state.value} onChange={this.handleValueChange}></input>
             </form>
             <style jsx>{`
         .boardContainer {
