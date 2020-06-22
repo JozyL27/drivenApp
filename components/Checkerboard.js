@@ -23,11 +23,11 @@ export default class Checkerboard extends Component {
             }
         }
 
-        return arr.map(el => el === '#' ? 
-        <div className='hash' 
-        style={{ backgroundColor: 'black', width: '20px', height: '20px', float: 'left' }}>#</div>: 
-        <div className='space' 
-        style={{ backgroundColor: 'grey', width: '20px', height: '20px', float: 'left' }}>_</div>)
+        return arr.map((el, index) => el === '#' ? 
+        <div className='hash' key={index} 
+        style={{ backgroundColor: 'black', width: '20px', height: '20px', float: 'left' }}></div>: 
+        <div className='space' key={index}
+        style={{ backgroundColor: 'grey', width: '20px', height: '20px', float: 'left' }}></div>)
     }
 
     handleValueChange = (e) => {
@@ -37,9 +37,9 @@ export default class Checkerboard extends Component {
 
     render() {
         return (
-            <>
+            <section className='boardSection'>
             <div className='boardContainer'>{this.createBoard(this.state.value)}</div>
-            <form>
+            <form className='boardForm'>
                 <label htmlFor='checkerVal'>input checkerboard val</label>
                 <input id='checkerVal' value={this.state.value} onChange={this.handleValueChange}></input>
             </form>
@@ -50,8 +50,17 @@ export default class Checkerboard extends Component {
             width: 160px;
             height: 160px;
         }
+        .boardForm {
+            margin: 20px auto 20px auto;
+        }
+
+        .boardSection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
       `}</style>
-            </>
+            </section>
         )
     }
 }
