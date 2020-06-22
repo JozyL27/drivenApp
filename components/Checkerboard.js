@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 
 export default class Checkerboard extends Component {
-    state = { value: 8 }
+    state = { value: 64 }
 
     createBoard = (value) => {
         let arr = []
@@ -16,7 +16,7 @@ export default class Checkerboard extends Component {
         // }
 
         for(let i = 0; i < this.state.value; i++) {
-            if(parseInt((i / 8) + i) % 2 == 0) {
+            if(parseInt((i / 8) + i) % 2 === 0) {
                 arr.push('_')
             } else {
                 arr.push('#')
