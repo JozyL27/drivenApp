@@ -17,9 +17,9 @@ export default class Checkerboard extends Component {
 
         return arr.map(el => el === '#' ? 
         <div className='hash' 
-        style={{ backgroundColor: 'black', padding: '10px' }}>#</div>: 
+        style={{ backgroundColor: 'black', width: '20px', height: '20px', float: 'left' }}>#</div>: 
         <div className='space' 
-        style={{ backgroundColor: 'grey', padding: '10px' }}>_</div>)
+        style={{ backgroundColor: 'grey', width: '20px', height: '20px', float: 'left' }}>_</div>)
     }
 
     handleValueChange = (e) => {
@@ -39,7 +39,8 @@ export default class Checkerboard extends Component {
         .boardContainer {
             margin: 50px auto 20px auto;
             border: 1px solid black;
-            display: flex;
+            width: 160px;
+            height: 160px;
         }
       `}</style>
             </>
