@@ -7,10 +7,18 @@ export default class Checkerboard extends Component {
     createBoard = (value) => {
         let arr = []
 
+        // for(let i = 0; i < this.state.value; i++) {
+        //     if(i % 2 === 1) {
+        //         arr.push('_')
+        //     } else if(i % 2 === 0) {
+        //         arr.push('#')
+        //     }
+        // }
+
         for(let i = 0; i < this.state.value; i++) {
-            if(i % 2 === 1) {
+            if(parseInt((i / 8) + i) % 2 == 0) {
                 arr.push('_')
-            } else if(i % 2 === 0) {
+            } else {
                 arr.push('#')
             }
         }
